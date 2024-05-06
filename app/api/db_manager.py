@@ -1,9 +1,9 @@
-from app.api.models import CompaniesIn
+from app.api.models import CompanyIn
 
 from app.api.db import companies, database
 
 
-async def add_area(payload: CompaniesIn):
+async def add_area(payload: CompanyIn):
     query = companies.insert().values(**payload.dict())
     return await database.execute(query=query)
 
@@ -23,7 +23,7 @@ async def delete_area(id: int):
     return await database.execute(query=query)
 
 
-async def update_area(id: int, payload: CompaniesIn
+async def update_area(id: int, payload: CompanyIn
 ):
     query = (
         companies
