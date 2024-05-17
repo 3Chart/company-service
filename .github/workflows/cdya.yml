@@ -39,6 +39,7 @@ jobs:
     - name: push to YC Registry
       run: docker push cr.yandex/${{ secrets.YC_REGISTRY_ID }}/company-service:latest
 
+
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
